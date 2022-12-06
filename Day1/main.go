@@ -61,7 +61,6 @@ func findMaxIntValue(input []int) int {
 }
 
 func findTopThreeElvesTotal(input []int) []int {
-	// Start by finding the sum of what the top 3 elves are carrying
 	var list []int
 
 	sort.Ints(input)
