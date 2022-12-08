@@ -53,7 +53,7 @@ func getFullyContainedRangesCount(input []string) (int, int) {
 }
 
 func main() {
-	logrus.Println("Starting Day4!")
+	logrus.Println("Starting Day 4!")
 	fullData := utils.GetInputData("./Input/input.txt")
 	logrus.Printf("Full dataset is of size: %v\n", len(fullData))
 	fullyContainedRangesCount, overlappingRangesCount := getFullyContainedRangesCount(fullData)
