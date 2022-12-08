@@ -2,7 +2,6 @@ package utils
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"strings"
 
@@ -62,7 +61,7 @@ func UniqueBytes(input []string) []string {
 		result = append(result, string(temp[:]))
 	}
 
-	fmt.Printf("The resulting unique string array is: %v\n", result)
+	logrus.Printf("The resulting unique string array is: %v\n", result)
 
 	return result
 }
