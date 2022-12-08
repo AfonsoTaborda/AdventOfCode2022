@@ -8,8 +8,8 @@ The folder structure is as follows:
     ├── DayX               # Folder containing the source code for a given X day
     |    ├── Input      # The folder containing the input data
     |    └── main.go    # The GO program solving the given Advent Calendar day's exercise
-    ├── utils              # Folder containing the common utility functions
-    |    ├── utils.go           # The utils GO package
+    ├── utils         # Folder containing the common utility functions
+    |    ├── utils.go   # The utils GO package
     └── README.md
 
 ## How To Run The Code
