@@ -6,6 +6,8 @@ import (
 	"log"
 	"os"
 	"strings"
+
+	"github.com/AfonsoTaborda/AdventOfCode2022/utils"
 )
 
 func getInputData() ([]string, []string, []string) {
@@ -60,28 +62,6 @@ func getPriorities() map[byte]int {
 	return priorities
 }
 
-func uniqueBytes(input []string) []string {
-	result := []string{}
-
-	for i := 0; i < len(input); i++ {
-		temp := []byte{}
-		for j := 0; j < len(input[i]); j++ {
-			if len(temp) != 0 {
-				if !strings.Contains(string(temp), string(input[i][j])) {
-					temp = append(temp, input[i][j])
-				}
-			} else {
-				temp = append(temp, input[i][j])
-			}
-		}
-		result = append(result, string(temp[:]))
-	}
-
-	fmt.Printf("The resulting unique string array is: %v\n", result)
-
-	return result
-}
-
 func getPrioritiesByBadgeGroup(inputList []string) int {
 	priorities := getPriorities()
 	prioritiesScoreSum := 0
@@ -93,10 +73,8 @@ func getPrioritiesByBadgeGroup(inputList []string) int {
 
 		for j := 0; j < len(first); j++ {
 			if strings.Contains(second, string(first[j])) {
-				fmt.Printf("Found letter %v in %v\n	Which results in %v points being added.\n", string(first[j]), second, priorities[first[j]])
 				if strings.Contains(third, string(first[j])) {
 					prioritiesScoreSum += priorities[first[j]]
-					fmt.Printf("Found letter %v in %v\n	Which results in %v points being added.\n", string(first[j]), third, priorities[first[j]])
 					continue
 				}
 			}
@@ -114,7 +92,6 @@ func getPrioritiesSum(firstHalfList []string, secondHalfList []string) int {
 		for j := 0; j < len(firstHalfList[i]); j++ {
 			if strings.Contains(secondHalfList[i], string(firstHalfList[i][j])) {
 				prioritiesScoreSum += priorities[firstHalfList[i][j]]
-				fmt.Printf("Found letter %v in %v from first half: %v\n	Which results in %v points being added.\n", string(firstHalfList[i][j]), secondHalfList[i], firstHalfList[i], priorities[firstHalfList[i][j]])
 			}
 		}
 	}
@@ -128,11 +105,11 @@ func main() {
 
 	fmt.Printf("Got first Half %v and the second half %v of the rucksack\n", string(firstHalfList[0]), string(secondHalfList[0]))
 
-	prioritiesScoreSum := getPrioritiesSum(uniqueBytes(firstHalfList), uniqueBytes(secondHalfList))
+	prioritiesScoreSum := getPrioritiesSum(utils.UniqueBytes(firstHalfList), utils.UniqueBytes(secondHalfList))
 
 	log.Printf("The sum of the similar rucksack items is: %v", prioritiesScoreSum)
 
-	badgePrioritySum := getPrioritiesByBadgeGroup(uniqueBytes(fullList))
+	badgePrioritySum := getPrioritiesByBadgeGroup(utils.UniqueBytes(fullList))
 
 	log.Printf("The sum of the similar rucksack items by badge groups is: %v", badgePrioritySum)
 }

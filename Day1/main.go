@@ -7,6 +7,8 @@ import (
 	"os"
 	"sort"
 	"strconv"
+
+	"github.com/AfonsoTaborda/AdventOfCode2022/utils"
 )
 
 func getInputData() []int {
@@ -48,18 +50,6 @@ func getInputData() []int {
 	return linesInt
 }
 
-func findMaxIntValue(input []int) int {
-	max := input[0]
-
-	for _, value := range input {
-		if value > max {
-			max = value
-		}
-	}
-
-	return max
-}
-
 func findTopThreeElvesTotal(input []int) []int {
 	var list []int
 
@@ -99,7 +89,7 @@ func main() {
 
 	totalCarriedByElf := calculateTotalCarriedByElf(lines)
 
-	elfCarryingTheMost := findMaxIntValue(totalCarriedByElf)
+	elfCarryingTheMost := utils.FindMaxIntValue(totalCarriedByElf)
 
 	fmt.Printf("The maximum carried by an elf is: %v\n", elfCarryingTheMost)
 
