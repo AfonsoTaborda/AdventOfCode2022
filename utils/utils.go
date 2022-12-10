@@ -44,7 +44,7 @@ func FindMaxIntValue(input []int) int {
 	return max
 }
 
-func UniqueBytes(input []string) []string {
+func UniqueStringBytes(input []string) []string {
 	result := []string{}
 
 	for i := 0; i < len(input); i++ {

@@ -105,11 +105,11 @@ func main() {
 
 	fmt.Printf("Got first Half %v and the second half %v of the rucksack\n", string(firstHalfList[0]), string(secondHalfList[0]))
 
-	prioritiesScoreSum := getPrioritiesSum(utils.UniqueBytes(firstHalfList), utils.UniqueBytes(secondHalfList))
+	prioritiesScoreSum := getPrioritiesSum(utils.UniqueStringBytes(firstHalfList), utils.UniqueStringBytes(secondHalfList))
 
 	log.Printf("The sum of the similar rucksack items is: %v", prioritiesScoreSum)
 
-	badgePrioritySum := getPrioritiesByBadgeGroup(utils.UniqueBytes(fullList))
+	badgePrioritySum := getPrioritiesByBadgeGroup(utils.UniqueStringBytes(fullList))
 
 	log.Printf("The sum of the similar rucksack items by badge groups is: %v", badgePrioritySum)
 }
