@@ -12,8 +12,8 @@ The folder structure is as follows:
     |    ├── utils.go   # The utils GO package
     └── README.md
 
-## How To Run The Code
-# Pre-requisites
+# How To Run The Code
+## Pre-requisites
 1. You can choose between running the dev container:
     - [Docker](https://www.docker.com/)
 2. Or running directly from your current system by installing GO:
