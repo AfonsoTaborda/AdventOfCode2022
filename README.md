@@ -13,6 +13,12 @@ The folder structure is as follows:
     └── README.md
 
 ## How To Run The Code
+# Pre-requisites
+1. You can choose between running the dev container:
+    - [Docker](https://www.docker.com/)
+2. Or running directly from your current system by installing GO:
+    - [GO](https://go.dev/)
+
 In order to run the different Advent Of Code 2022 solutions, follows these steps:
 1. From the root directory, run the devcontainer solution, or otherwise install the GO binaries in your current system in order to be able to run GO programs.
 2. Change directory into one of the days' folders.

@@ -29,6 +29,6 @@ func getMarkerIndices(input []string, differenCharacters int) map[rune]int {
 func main() {
 	logrus.Println("Starting Day 6!")
 	fullData := utils.GetInputData("./Input/input.txt")
-	logrus.Printf("Founr different characters: %v", getMarkerIndices(fullData, 4))
+	logrus.Printf("Found different characters: %v", getMarkerIndices(fullData, 4))
 	logrus.Printf("Fourteen different markers: %v", getMarkerIndices(fullData, 14))
 }
